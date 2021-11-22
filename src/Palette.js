@@ -37,6 +37,8 @@ const Swatch = styled.button`
   width: ${SWATCH_SIZE}px;
   height: ${SWATCH_SIZE}px;
   background-color: ${(props) => props.color};
+  cursor: pointer;
+  border-style: inset;
 `
 
 const CurrentSwatch = styled(Swatch)`
@@ -49,18 +51,26 @@ const CurrentWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, calc((${SWATCH_SIZE} / 2) * 1px));
   grid-template-rows: repeat(3, calc((${SWATCH_SIZE} / 2) * 1px));
-  background-color: #dedee0;
-  /* padding: 10px; */
+  background-color: var(--light-gray);
+  padding: 6px;
+  border-style: inset;
 `
 
 const SwatchWrapper = styled.div`
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(14, 1fr);
+  gap: 3px;
 `
 
 const PaletteWrapper = styled.div`
+  position: sticky;
+  bottom: 0;
   display: flex;
+  align-items: center;
+  background-color: var(--gray);
+  padding: 4px;
+  gap: 12px;
 `
 
 export default function Palette({

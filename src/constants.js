@@ -1,0 +1,101 @@
+export const TOOLS = [
+  {
+    name: 'FREEFORM_SELECT',
+    title: 'Free-form Select',
+    position: '0',
+    options: { method: ['opaque', 'transparent'] },
+  },
+  {
+    name: 'MARQUEE_SELECT',
+    title: 'Marquee Select',
+    position: '-16px',
+    options: { method: ['opaque', 'transparent'] },
+  },
+  {
+    name: 'ERASER',
+    title: 'Eraser',
+    position: '-32px',
+    options: { size: [4, 6, 8, 10] },
+  },
+  {
+    name: 'PAINT_BUCKET',
+    title: 'Paint Bucket',
+    position: '-48px',
+    options: {},
+  },
+  {
+    name: 'EYEDROPPER',
+    title: 'Eyedropper',
+    position: '-64px',
+    options: {},
+  },
+  {
+    name: 'ZOOM',
+    title: 'Zoom',
+    position: '-80px',
+    options: { amount: [1, 2, 6, 8] },
+  },
+  {
+    name: 'PENCIL',
+    title: 'Pencil',
+    position: '-96px',
+    options: {},
+  },
+  {
+    name: 'BRUSH',
+    title: 'Brush',
+    position: '-112px',
+    options: {
+      strokeWidth: [7, 5, 3],
+      strokeType: ['round', 'square', 'right', 'left'],
+    },
+  },
+  {
+    name: 'AIRBRUSH',
+    title: 'Airbrush',
+    position: '-128px',
+    options: { size: [0, 1, 2] },
+  },
+  {
+    name: 'TEXT',
+    title: 'Text',
+    position: '-144px',
+    options: { method: ['opaque', 'transparent'] },
+  },
+  {
+    name: 'LINE',
+    title: 'Line',
+    position: '-160px',
+    options: { strokeWidth: [1, 2, 3, 4, 5] },
+  },
+  {
+    name: 'CURVE',
+    title: 'Curve',
+    position: '-176px',
+    options: { strokeWidth: [1, 2, 3, 4, 5] },
+  },
+  {
+    name: 'RECTANGLE',
+    title: 'Rectangle',
+    position: '-192px',
+    options: { type: ['stroke', 'both', 'fill'] },
+  },
+  {
+    name: 'POLYGON',
+    title: 'Polygon',
+    position: '-208px',
+    options: { type: ['stroke', 'both', 'fill'] },
+  },
+  {
+    name: 'ELLIPSE',
+    title: 'Ellipse',
+    position: '-224px',
+    options: { type: ['stroke', 'both', 'fill'] },
+  },
+  {
+    name: 'ROUNDED_RECTANGLE',
+    title: 'Rounded Rectangle',
+    position: '-240px',
+    options: { type: ['stroke', 'both', 'fill'] },
+  },
+]
