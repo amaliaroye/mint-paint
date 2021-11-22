@@ -6,13 +6,29 @@
   --dark-gray: #424242;
   --black: #000000;
 
+  --neutral-100: rgb(255, 255, 255);
+  --neutral-200: rgb(223, 223, 223);
+  --neutral-300: rgb(192, 192, 192);
+  --neutral-400: rgb(181, 181, 181);
+  --neutral-500: rgb(128, 128, 128);
+  --neutral-900: rgb(0, 0, 0);
+
+  --bg-desktop: rgb(0, 128, 128);
+  --blue-400: rgb(0, 0, 255);
+
   --border-color: var(--white) var(--dark-gray) var(--dark-gray) var(--white);
+
+  --inset-border: var(--neutral-500) var(--neutral-100) var(--neutral-100)
+    var(--neutral-500);
+  --outset-border: var(--neutral-100) var(--neutral-500) var(--neutral-500)
+    var(--neutral-100);
 }
 
 body {
   background-color: var(--gray);
   height: 100vh;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
   width: 100%;
-  margin: 0;
 }

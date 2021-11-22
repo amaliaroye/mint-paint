@@ -18,12 +18,12 @@ const ToolWrapper = styled.div`
 `
 
 const ToolButton = styled.button`
-  background-color: #c0c0c0;
+  background-color: var(--neutral-300);
   padding: 4px;
   display: flex;
   border-style: ${(props) => (props.selected ? 'inset' : 'outset')};
   background-color: ${(props) =>
-    props.selected ? 'var(--light-gray)' : 'var(--gray)'};
+    props.selected ? 'var(--neutral-200)' : 'var(--neutral-300)'};
   border-color: var(--border-color);
 `
 
@@ -38,7 +38,7 @@ const ToolIcon = styled.div`
 const ToolOptions = styled.div`
   height: 64px;
   width: 48px;
-  background-color: var(--gray);
+  background-color: var(--neutral-300);
   border-style: inset;
 `
 
