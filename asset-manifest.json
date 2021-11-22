@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/mint-paint/static/css/main.cfd14ec0.chunk.css",
-    "main.js": "/mint-paint/static/js/main.ad204e52.chunk.js",
-    "main.js.map": "/mint-paint/static/js/main.ad204e52.chunk.js.map",
+    "main.css": "/mint-paint/static/css/main.d55fbfd1.chunk.css",
+    "main.js": "/mint-paint/static/js/main.e2c60bc1.chunk.js",
+    "main.js.map": "/mint-paint/static/js/main.e2c60bc1.chunk.js.map",
     "runtime-main.js": "/mint-paint/static/js/runtime-main.90c949a0.js",
     "runtime-main.js.map": "/mint-paint/static/js/runtime-main.90c949a0.js.map",
-    "static/js/2.a5ac19f0.chunk.js": "/mint-paint/static/js/2.a5ac19f0.chunk.js",
-    "static/js/2.a5ac19f0.chunk.js.map": "/mint-paint/static/js/2.a5ac19f0.chunk.js.map",
+    "static/js/2.9928ec8e.chunk.js": "/mint-paint/static/js/2.9928ec8e.chunk.js",
+    "static/js/2.9928ec8e.chunk.js.map": "/mint-paint/static/js/2.9928ec8e.chunk.js.map",
     "index.html": "/mint-paint/index.html",
-    "static/css/main.cfd14ec0.chunk.css.map": "/mint-paint/static/css/main.cfd14ec0.chunk.css.map",
-    "static/js/2.a5ac19f0.chunk.js.LICENSE.txt": "/mint-paint/static/js/2.a5ac19f0.chunk.js.LICENSE.txt"
+    "static/css/main.d55fbfd1.chunk.css.map": "/mint-paint/static/css/main.d55fbfd1.chunk.css.map",
+    "static/js/2.9928ec8e.chunk.js.LICENSE.txt": "/mint-paint/static/js/2.9928ec8e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.90c949a0.js",
-    "static/js/2.a5ac19f0.chunk.js",
-    "static/css/main.cfd14ec0.chunk.css",
-    "static/js/main.ad204e52.chunk.js"
+    "static/js/2.9928ec8e.chunk.js",
+    "static/css/main.d55fbfd1.chunk.css",
+    "static/js/main.e2c60bc1.chunk.js"
   ]
 }
