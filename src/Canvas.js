@@ -112,7 +112,7 @@ export default function Canvas({ foreground, currentTool }) {
               stroke={line.color}
               strokeWidth={5}
               tension={0.5}
-              lineCap='butt'
+              lineCap='square'
             />
           ))}
         </Layer>
