@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Windows95';
+  src: local('W95FA'), url('./assets/w95fa.woff') format('woff'),
+    url('./assets/w95fa.woff2') format('woff2'),
+    url('./assets/W95FA.otf') format('opentype');
+}
+
 :root {
   --white: #ffffff;
   --light-gray: #dddddd;
@@ -22,6 +29,109 @@
     var(--neutral-500);
   --outset-border: var(--neutral-100) var(--neutral-500) var(--neutral-500)
     var(--neutral-100);
+
+  --cursor-default: url('./assets/cursor-default.png');
+  --cursor-eyedropper: url('./assets/cursor-eyedropper.png');
+  --cursor-move: url('./assets/cursor-move.png');
+  --cursor-precise: url('./assets/cursor-precise.png');
+  --cursor-pencil: url('./assets/cursor-pencil.png');
+}
+
+:root {
+  /*! 98.css v0.1.17 - https://github.com/jdan/98.css */
+  /**
+  * 98.css
+  * Copyright (c) 2020 Jordan Scales <thatjdanisso.cool>
+  * https://github.com/jdan/98.css/blob/main/LICENSE
+  */
+  /* -------------------------------- Color */
+  --surface: #c0c0c0;
+  --button-highlight: #ffffff;
+  --button-face: #dfdfdf;
+  --button-shadow: #808080;
+  --window-frame: #0a0a0a;
+  --dialog-blue: #000080;
+  --dialog-blue-light: #1084d0;
+  --dialog-gray: #808080;
+  --dialog-gray-light: #b5b5b5;
+  --link-blue: #0000ff;
+
+  /* -------------------------------- Spacing */
+  --element-spacing: 8px;
+  --grouped-button-spacing: 4px;
+  --grouped-element-spacing: 6px;
+  --radio-width: 12px;
+  --checkbox-width: 13px;
+  --radio-label-spacing: 6px;
+  --range-track-height: 4px;
+  --range-spacing: 10px;
+
+  /* -------------------------------- Radio Buttons */
+  --radio-total-width-precalc: var(--radio-width) + var(--radio-label-spacing);
+  --radio-total-width: calc(var(--radio-total-width-precalc));
+  --radio-left: calc(-1 * var(--radio-total-width-precalc));
+  --radio-dot-width: 4px;
+  --radio-dot-top: calc(var(--radio-width) / 2 - var(--radio-dot-width) / 2);
+  --radio-dot-left: calc(
+    -1 * (var(--radio-total-width-precalc)) + var(--radio-width) / 2 - var(
+        --radio-dot-width
+      ) / 2
+  );
+
+  /* -------------------------------- Checkboxes */
+  --checkbox-total-width-precalc: var(--checkbox-width) +
+    var(--radio-label-spacing);
+  --checkbox-total-width: calc(var(--checkbox-total-width-precalc));
+  --checkbox-left: calc(-1 * var(--checkbox-total-width-precalc));
+  --checkmark-width: 7px;
+  --checkmark-top: 3px;
+  --checkmark-left: 3px;
+
+  /* -------------------------------- Borders */
+  --border-width: 1px;
+  --border-raised-outer: inset -1px -1px var(--window-frame),
+    inset 1px 1px var(--button-highlight);
+  --border-raised-inner: inset -2px -2px var(--button-shadow),
+    inset 2px 2px var(--button-face);
+  --border-sunken-outer: inset -1px -1px var(--button-highlight),
+    inset 1px 1px var(--window-frame);
+  --border-sunken-inner: inset -2px -2px var(--button-face),
+    inset 2px 2px var(--button-shadow);
+
+  /* -------------------------------- Window borders
+   * flip button-face and button-highlight */
+  --border-window-outer: inset -1px -1px var(--window-frame),
+    inset 1px 1px var(--button-face);
+  --border-window-inner: inset -2px -2px var(--button-shadow),
+    inset 2px 2px var(--button-highlight);
+
+  /* -------------------------------- Field borders (checkbox, input, etc)
+   * flip window-frame and button-shadow */
+  --border-field: inset -1px -1px var(--button-highlight),
+    inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
+    inset 2px 2px var(--window-frame);
+}
+@font-face {
+  font-family: 'Pixelated MS Sans Serif';
+  src: url('./assets/ms_sans_serif.woff') format('woff');
+  src: url('./assets/ms_sans_serif.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pixelated MS Sans Serif';
+  src: url('./assets/ms_sans_serif_bold.woff') format('woff');
+  src: url('./assets/ms_sans_serif_bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: Pixelated MS Sans Serif, Windows95, sans-serif;
+  font-size: 11px;
 }
 
 body {
