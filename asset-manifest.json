@@ -1,26 +1,29 @@
 {
   "files": {
     "main.css": "/mint-paint/static/css/main.a16c42ea.chunk.css",
-    "main.js": "/mint-paint/static/js/main.70c5dacc.chunk.js",
-    "main.js.map": "/mint-paint/static/js/main.70c5dacc.chunk.js.map",
+    "main.js": "/mint-paint/static/js/main.a1ed42fa.chunk.js",
+    "main.js.map": "/mint-paint/static/js/main.a1ed42fa.chunk.js.map",
     "runtime-main.js": "/mint-paint/static/js/runtime-main.90c949a0.js",
     "runtime-main.js.map": "/mint-paint/static/js/runtime-main.90c949a0.js.map",
-    "static/js/2.d156f053.chunk.js": "/mint-paint/static/js/2.d156f053.chunk.js",
-    "static/js/2.d156f053.chunk.js.map": "/mint-paint/static/js/2.d156f053.chunk.js.map",
+    "static/js/2.cbdc5f96.chunk.js": "/mint-paint/static/js/2.cbdc5f96.chunk.js",
+    "static/js/2.cbdc5f96.chunk.js.map": "/mint-paint/static/js/2.cbdc5f96.chunk.js.map",
     "index.html": "/mint-paint/index.html",
     "static/css/main.a16c42ea.chunk.css.map": "/mint-paint/static/css/main.a16c42ea.chunk.css.map",
-    "static/js/2.d156f053.chunk.js.LICENSE.txt": "/mint-paint/static/js/2.d156f053.chunk.js.LICENSE.txt",
+    "static/js/2.cbdc5f96.chunk.js.LICENSE.txt": "/mint-paint/static/js/2.cbdc5f96.chunk.js.LICENSE.txt",
     "static/media/style.css": "/mint-paint/static/media/w95fa.fb426abf.woff2",
+    "static/media/amalia.b07c2278.jpg": "/mint-paint/static/media/amalia.b07c2278.jpg",
+    "static/media/border-groupbox.bed51e8e.svg": "/mint-paint/static/media/border-groupbox.bed51e8e.svg",
     "static/media/icon-close.137d3510.svg": "/mint-paint/static/media/icon-close.137d3510.svg",
     "static/media/icon-help.274dbadd.svg": "/mint-paint/static/media/icon-help.274dbadd.svg",
     "static/media/icon-maximize.4af55829.svg": "/mint-paint/static/media/icon-maximize.4af55829.svg",
     "static/media/icon-minimize.a09ca2db.svg": "/mint-paint/static/media/icon-minimize.a09ca2db.svg",
-    "static/media/icon-restore.b0862ba3.svg": "/mint-paint/static/media/icon-restore.b0862ba3.svg"
+    "static/media/icon-restore.b0862ba3.svg": "/mint-paint/static/media/icon-restore.b0862ba3.svg",
+    "static/media/screenshot.20bee616.png": "/mint-paint/static/media/screenshot.20bee616.png"
   },
   "entrypoints": [
     "static/js/runtime-main.90c949a0.js",
-    "static/js/2.d156f053.chunk.js",
+    "static/js/2.cbdc5f96.chunk.js",
     "static/css/main.a16c42ea.chunk.css",
-    "static/js/main.70c5dacc.chunk.js"
+    "static/js/main.a1ed42fa.chunk.js"
   ]
 }
