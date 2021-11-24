@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'Windows95';
-  src: local('W95FA'), url('./assets/w95fa.woff') format('woff'),
-    url('./assets/w95fa.woff2') format('woff2'),
-    url('./assets/W95FA.otf') format('opentype');
-}
-
 :root {
   --white: #ffffff;
   --light-gray: #dddddd;
@@ -111,6 +104,14 @@
     inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
     inset 2px 2px var(--window-frame);
 }
+
+@font-face {
+  font-family: 'Windows95';
+  src: local('W95FA'), url('./assets/w95fa.woff') format('woff'),
+    url('./assets/w95fa.woff2') format('woff2'),
+    url('./assets/W95FA.otf') format('opentype');
+}
+
 @font-face {
   font-family: 'Pixelated MS Sans Serif';
   src: url('./assets/ms_sans_serif.woff') format('woff');
