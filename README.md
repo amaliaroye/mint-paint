@@ -1,7 +1,7 @@
 #  [![Icon](src/assets/logo.png) Mint Paint](https://amaliaroye.github.io/mint-paint/)
 
 ## 🎨 Overview
-> Mint Paint is a browser-based paint application inspired by the Windows 98 Paint program. Made for a [one-week hackathon](https://tinyurl.com/yz4p8344) with [Mintbean](https://mintbean.io/).
+> Mint Paint is a browser-based paint application based on the Windows 98 Paint program made for a [one-week hackathon](https://tinyurl.com/yz4p8344) with [Mintbean](https://mintbean.io/).
 
 #### **[Check out the live demo!](https://amaliaroye.github.io/mint-paint/)**
 
