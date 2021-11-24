@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Button } from './shared/Button'
 import TitleBar from './shared/TitleBar'
+import Image from './shared/Image'
+import Fieldset from './shared/Fieldset'
+import screenshot from './assets/screenshot.png'
+import amalia from './assets/amalia.jpg'
 
 export default function LandingPage() {
   return (
@@ -14,14 +18,50 @@ export default function LandingPage() {
         />
         <WindowContent>
           <p>
-            Mint Paint is a browser-based paint application based on the Windows
-            98 Paint program made for a{' '}
-            <a href='https://tinyurl.com/yz4p8344'>one-week hackathon</a> with{' '}
-            <a href='https://mintbean.io/'>Mintbean</a>.
+            Are you feeling a bit nostalgic? Feeling like drawing programs
+            nowadays have too many confusing features? Color palettes with more
+            than 24 colors?! <i>Layers</i>? <i>Filters</i>? <i>Opacity</i>?!?!?!
+            It's all <strong>too much</strong> sometimes.
+          </p>
+          <strong>
+            Get transported back to the good ol` days of Y2K, almond-colored CRT
+            monitors, and A/S/L on AIM with <Link to='/'>Mint Paint</Link>!
+          </strong>
+          <Fieldset>
+            <Image src={screenshot} alt='Mint Paint App Screenshot' />
+          </Fieldset>
+          <p>
+            <strong>Mint Paint</strong> is a browser-based paint application
+            based on the classic Windows 95/98 Paint program. Made using React,
+            Konva, and Styled Components for a{' '}
+            <a
+              href='https://tinyurl.com/yz4p8344'
+              target='_blank'
+              rel='noreferrer'
+            >
+              one-week hackathon
+            </a>{' '}
+            with{' '}
+            <a href='https://mintbean.io/' target='_blank' rel='noreferrer'>
+              Mintbean
+            </a>
+            .
+          </p>
+          <p>
+            {' '}
+            Check out the{' '}
+            <a
+              href='https://github.com/amaliaroye/mint-paint'
+              target='_blank'
+              rel='noreferrer'
+            >
+              Github Repo
+            </a>{' '}
+            for more information!
           </p>
           <FieldRow align='flex-end'>
             <Link to='/'>
-              <Button>Check out the live demo!</Button>
+              <Button>🢂 Check out the live demo! 🢀</Button>
             </Link>
             <a
               href='https://github.com/amaliaroye/mint-paint'
@@ -32,23 +72,34 @@ export default function LandingPage() {
             </a>
           </FieldRow>
         </WindowContent>
+        {/* <StatusBar>
+          <StatusField>StatusBar!</StatusField>
+        </StatusBar> */}
       </WindowCard>
 
       <WindowCard>
-        <TitleBar
-          text='Technologies'
-          buttons={['minimize', 'maximize', 'close']}
-        />
+        <TitleBar text='Features' buttons={['minimize', 'maximize', 'close']} />
         <WindowContent>
-          <ul>
-            <li>React</li>
-            <li>Konva/React-Konva</li>
-            <li>Styled Components</li>
-          </ul>
+          <Fieldset label='Current Features'>
+            <ul>
+              <li>Brush tool</li>
+              <li>Pencil tool</li>
+              <li>Eraser tool</li>
+              <li>Change selected foreground color for tools</li>
+              <li>Change canvas background color</li>
+            </ul>
+          </Fieldset>
+
+          <Fieldset label='Planned Features'>
+            <ul>
+              <li>Undo/Redo</li>
+              <li>Save/download drawing as image</li>
+              <li>Select brush and eraser size</li>
+              <li>Eyedropper tool</li>
+              <li>Draw basic shapes (rectangle/rounded rectangle/ellipse)</li>
+            </ul>
+          </Fieldset>
         </WindowContent>
-        <StatusBar>
-          <StatusField>I am a status</StatusField>
-        </StatusBar>
       </WindowCard>
 
       <WindowCard>
@@ -57,35 +108,40 @@ export default function LandingPage() {
           buttons={['minimize', 'maximize', 'close']}
         />
         <WindowContent>
-          <p>Made by Amalia Advincula-Roye</p>
-          <FieldRow align='flex-end'>
-            <strong>Find me around the web!</strong>
-            <a
-              href='https://amaliaroye.github.io/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <Button>Portfolio</Button>
-            </a>
-            <a
-              href='https://github.com/amaliaroye'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <Button>GitHub</Button>
-            </a>
-            <a
-              href='https://www.linkedin.com/in/amalia-advincula-roye/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <Button>LinkedIn</Button>
-            </a>
+          <FieldRow>
+            <Image src={amalia} alt='Author Photo' width={75} round />
+            <div>
+              <p>Made by Amalia Advincula-Roye</p>
+              <FieldRow align='flex-end'>
+                {/* <strong>Find me around the web!</strong> */}
+                <a
+                  href='https://amaliaroye.github.io/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <Button>Portfolio</Button>
+                </a>
+                <a
+                  href='https://github.com/amaliaroye'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <Button>GitHub</Button>
+                </a>
+                <a
+                  href='https://www.linkedin.com/in/amalia-advincula-roye/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <Button>LinkedIn</Button>
+                </a>
+              </FieldRow>
+              <address>
+                Or contact me at{' '}
+                <a href='mailto:amaliaroye@gmail.com'>amaliaroye@gmail.com</a>!
+              </address>
+            </div>
           </FieldRow>
-          <address>
-            Or contact me at{' '}
-            <a href='mailto:amaliaroye@gmail.com'>amaliaroye@gmail.com</a>
-          </address>
         </WindowContent>
       </WindowCard>
     </PageContainer>
@@ -97,6 +153,7 @@ const PageContainer = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 `
 
 const WindowCard = styled.section`
