@@ -2,6 +2,39 @@ import React from 'react'
 import styled from 'styled-components'
 import toolSpritesheet from './assets/tools.png'
 import { TOOLS } from './constants'
+import Tooltip from './shared/Tooltip'
+
+export default function Toolbar({
+  currentTool,
+  setCurrentTool,
+  setToolOptions,
+}) {
+  return (
+    <ToolbarContainer>
+      <ToolWrapper>
+        {TOOLS.map(({ title, name, disabled, position, options }, i) => {
+          return (
+            <ToolButton
+              key={i}
+              title={title}
+              onClick={() => {
+                if (!disabled) {
+                  setCurrentTool(name)
+                  setToolOptions(options)
+                }
+              }}
+              selected={!disabled && currentTool === name ? true : false}
+              disabled={disabled}
+            >
+              <ToolIcon position={position} />
+            </ToolButton>
+          )
+        })}
+      </ToolWrapper>
+      <ToolOptions />
+    </ToolbarContainer>
+  )
+}
 
 const ToolbarContainer = styled.div`
   display: flex;
@@ -25,6 +58,7 @@ const ToolButton = styled.button`
   background-color: ${(props) =>
     props.selected ? 'var(--neutral-200)' : 'var(--neutral-300)'};
   border-color: var(--border-color);
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 `
 
 const ToolIcon = styled.div`
@@ -41,25 +75,3 @@ const ToolOptions = styled.div`
   background-color: var(--neutral-300);
   border-style: inset;
 `
-
-export default function Toolbar({ currentTool, setCurrentTool }) {
-  return (
-    <ToolbarContainer>
-      <ToolWrapper>
-        {TOOLS.map((tool, i) => {
-          return (
-            <ToolButton
-              key={i}
-              title={tool.title}
-              onClick={() => setCurrentTool(tool.name)}
-              selected={currentTool === tool.name ? true : false}
-            >
-              <ToolIcon position={tool.position} />
-            </ToolButton>
-          )
-        })}
-      </ToolWrapper>
-      <ToolOptions />
-    </ToolbarContainer>
-  )
-}

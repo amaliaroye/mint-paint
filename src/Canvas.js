@@ -1,6 +1,7 @@
 import React, { useReducer, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { Stage, Layer, Line, Rect } from 'react-konva'
+import { Stage, Layer, Line, Rect, Shape } from 'react-konva'
+import { toolReducer as reducer } from './toolReducer'
 
 const STAGE_WIDTH = 500
 const STAGE_HEIGHT = 500
@@ -10,51 +11,16 @@ const CanvasWrapper = styled.div`
   width: 100%;
 `
 
-// pass in state and action into reducer
-function reducer(lines, { type, payload }) {
-  let lastLine = lines[lines.length - 1]
-  switch (type) {
-    case 'START_BRUSH':
-      return [
-        ...lines,
-        {
-          tool: payload.tool,
-          color: payload.foreground,
-          points: [payload.point.x, payload.point.y],
-        },
-      ]
-    case 'CONTINUE_BRUSH':
-      lastLine.points = lastLine.points.concat([
-        payload.point.x,
-        payload.point.y,
-      ])
-
-      lines.splice(lines.length - 1, 1, lastLine)
-      return lines.concat()
-    case 'START_LINE':
-      return [
-        ...lines,
-        {
-          tool: payload.tool,
-          color: payload.foreground,
-          points: [payload.point.x, payload.point.y],
-        },
-      ]
-    case 'CONTINUE_LINE':
-      lastLine.points[2] = payload.point.x
-      lastLine.points[3] = payload.point.y
-
-      lines.splice(lines.length - 1, 1, lastLine)
-      return lines.concat()
-
-    default:
-      break
-  }
-}
-
-export default function Canvas({ foreground, currentTool }) {
+export default function Canvas({
+  foreground,
+  background,
+  currentTool,
+  toolOptions,
+  setCursorPosition,
+}) {
   const isDrawing = useRef(false)
   const [lines, dispatch] = useReducer(reducer, [])
+  const stageRef = useRef(null)
 
   const handleMouseDown = (event) => {
     isDrawing.current = true
@@ -64,28 +30,24 @@ export default function Canvas({ foreground, currentTool }) {
       payload: {
         point: mousePosition,
         foreground: foreground,
+        background: background,
         tool: currentTool,
+        options: toolOptions,
       },
     })
   }
 
-  const handleMouseUp = (event) => {
+  const handleMouseUp = () => {
     isDrawing.current = false
-    const mousePosition = event.target.getStage().getPointerPosition()
-    // dispatch({
-    //   type: `END_${currentTool}`,
-    //   payload: {
-    //     point: mousePosition,
-    //     foreground: foreground,
-    //     tool: currentTool,
-    //   },
-    // })
   }
 
   const handleMouseMove = (event) => {
+    const stage = stageRef.current.getStage()
+    const mousePosition = stage.getPointerPosition()
+    setCursorPosition(mousePosition)
+
     if (!isDrawing.current) return
 
-    const mousePosition = event.target.getStage().getPointerPosition()
     dispatch({
       type: `CONTINUE_${currentTool}`,
       payload: { point: mousePosition },
@@ -100,19 +62,24 @@ export default function Canvas({ foreground, currentTool }) {
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
+        ref={stageRef}
       >
         <Layer>
-          <Rect width={STAGE_WIDTH} height={STAGE_HEIGHT} fill='#ffffff' />
+          <Rect width={STAGE_WIDTH} height={STAGE_HEIGHT} fill={background} />
         </Layer>
+
         <Layer>
           {lines.map((line, i) => (
             <Line
               key={i}
               points={line.points}
-              stroke={line.color}
-              strokeWidth={5}
+              stroke={line.color || foreground}
+              strokeWidth={line.strokeWidth}
               tension={0.5}
               lineCap='square'
+              globalCompositeOperation={
+                line.tool === 'ERASER' ? 'destination-out' : 'source-over'
+              }
             />
           ))}
         </Layer>
