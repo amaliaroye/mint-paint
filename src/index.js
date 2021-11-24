@@ -7,7 +7,7 @@ import './style.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter basename='/'>
+    <HashRouter>
       <Routes>
         <Route path='/about' element={<LandingPage />} />
         <Route exact path='/' element={<App />} />
